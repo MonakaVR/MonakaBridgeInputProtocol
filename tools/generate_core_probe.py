@@ -4,7 +4,7 @@ R=pathlib.Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--check',action='store_true');a=p.parse_args()
 lock=json.loads((R/'tests/evidence.lock.json').read_text())
 for n,h in lock['files_sha256'].items():assert hashlib.sha256((R/n).read_bytes()).hexdigest()==h,n
-declaration=(R/'tests/reference/core/TrackerInputCapabilities.kt').read_text(encoding='utf-8').split('/** Persisted user selection.')[0]
+declaration=(R/'tests/reference/core/TrackerInputCapabilities.kt').read_text(encoding='utf-8').split('/** Persisted user selection.')[0].rstrip()+'\n'
 source=(R/'tests/reference/core/MtpObservationBackend.kt').read_text(encoding='utf-8')
 begin=source.index('val declaration = DeclaredTrackerCapabilities(');last='device.capabilities = declaration';end=source.index(last,begin)+len(last)
 snippet=source[begin:end]

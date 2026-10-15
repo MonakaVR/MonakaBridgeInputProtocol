@@ -1,5 +1,5 @@
 {
-  "mvip_source_commit": "51a6853897274635508100901a2643e55e185330",
+  "mvip_source_commit": "eb66935481f677293d648241d723258613f3c513",
   "core_repository": "MonakaVR/MonakaVR",
   "core_source_commit": "0cee1fda1f12c4d8cb9379b6ab15e3efe2a91b4b",
   "core_source_paths": [
@@ -12,11 +12,12 @@
     "tests/fixtures/p1/admission-candidate.json": "5ba2a0be3138a8a3d2811ce215ebb99f840464b287b98a8c0b6f0e96452c6df3",
     "tests/fixtures/p1/duplicate-capability.json": "5fbcc390c64e0337c8309f311881597a700e999e408ddfbc8057e42e06123c12",
     "tests/fixtures/p1/empty-no-support.json": "db7c997dc9784f69453c74c0de63700faeb30d81bcc105b5771f5a018822f30d",
-    "tests/fixtures/p1/index.json": "aba84b3cc7c0ebbc916edf85b4ee4573c85a014c75d2c8863f60517cc5d9e80d",
+    "tests/fixtures/p1/index.json": "0808033aacc8a6a1356becc59549ff7fd34ce5aa4aa5365303c880834d82883f",
     "tests/fixtures/p1/legacy-bridge-contract.binding.json": "3279ebc08b1beb99673f20943d786564143fd0a7e92236f1697e356676f4fd48",
     "tests/fixtures/p1/legacy-bridge-first-pose.json": "9beeeb13017bd6a08672e2ad2ff7267f03c332685e19f8617797cf8783bf3208",
     "tests/fixtures/p1/legacy-bridge-second-derived-pose.json": "ae710eecf0420d4dcf9a7c4a602263b58cc813db5af787132aa9bec972cefb30",
     "tests/fixtures/p1/legacy-bridge-state.json": "4ef200387a8c6379648e3497054f5f2af93266991d5840842f4c377aa6c63521",
+    "tests/fixtures/p1/loss-retained-derivative-diagnostics.json": "715e2c26cfab2d9a51f988dff9ca8a1d73997ddd3cda4de43b9b18cde44af98c",
     "tests/fixtures/p1/metadata-not-pose-validity.json": "d81211a2396a6f3acc6da0c919ed378ffdc23d2d6171289188bdf2051a615fb2",
     "tests/fixtures/p1/observation-contract.binding.json": "550a8d0b4e01c7954f197adb83a0a6c4452b1503a3353e1f3a3efea498610e41",
     "tests/fixtures/p1/pico-like-full-loss-stale.json": "5ba2a0be3138a8a3d2811ce215ebb99f840464b287b98a8c0b6f0e96452c6df3",

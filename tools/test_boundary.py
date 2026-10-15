@@ -48,6 +48,8 @@ for name,states in [('pico-like-supported-valid',valid),('pico-like-position-los
 for name,error in [('unknown-capability','UnsupportedValue'),('duplicate-capability','InconsistentValidity'),('unsupported-derivative','InconsistentValidity'),('unsupported-valid-position','InconsistentValidity')]:check(name,obs,error=error)
 for name,decl,states in [('unsupported-position-diagnostic',['orientation'],dict(orientation='VALID')),('empty-no-support',[],{}),('synthetic-same-tracker-position-loss',['position','orientation','angular_velocity'],dict(position='INVALID',orientation='VALID',angular_velocity='VALID')),('metadata-not-pose-validity',tokens,{**{t:'ABSENT' for t in tokens[:5]},'battery_fraction':'VALID','charging':'VALID'})]:
  config=copy.deepcopy(obs);config['declaration']=decl;check(name,config,states=states)
+diagnostics=copy.deepcopy(obs);diagnostics['declaration']=tokens[:5]
+check('loss-retained-derivative-diagnostics',diagnostics,states={t:'INVALID' for t in tokens[:5]})
 
 # Regression: preserving a capability MUST NOT make an invalid sample valid.
 candidate=check('candidate-validity-regression',obs,states=lost,message=read('admission-candidate'))[0]

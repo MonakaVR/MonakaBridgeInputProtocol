@@ -3,9 +3,9 @@
   "rows": [
     {"source":"position","target":"position","validity":"validity.position","class":"PASS_THROUGH"},
     {"source":"orientation","target":"orientation","validity":"validity.orientation","class":"PASS_THROUGH"},
-    {"source":"linear_velocity","target":"linear_velocity","validity":"non_null_sample","class":"PASS_THROUGH"},
-    {"source":"angular_velocity","target":"angular_velocity","validity":"non_null_sample","class":"PASS_THROUGH"},
-    {"source":"linear_acceleration","target":"linear_acceleration","validity":"non_null_sample_gravity_removed","class":"PASS_THROUGH"},
+    {"source":"linear_velocity","target":"linear_velocity","validity":"non_null_sample_and_position_valid","class":"PASS_THROUGH"},
+    {"source":"angular_velocity","target":"angular_velocity","validity":"non_null_sample_and_orientation_valid","class":"PASS_THROUGH"},
+    {"source":"linear_acceleration","target":"linear_acceleration","validity":"non_null_gravity_free_sample_and_position_valid","class":"PASS_THROUGH"},
     {"source":"battery_fraction","target":"battery_fraction","validity":"non_null_fraction","class":"PASS_THROUGH"},
     {"source":"charging","target":"charging","validity":"non_null_charging","class":"PASS_THROUGH"}
   ],

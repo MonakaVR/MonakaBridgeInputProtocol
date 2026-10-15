@@ -14,9 +14,9 @@ an independently maintained capability enum/schema/codec. Translation is owned b
 |---|---|---|---|---|
 | position | pose validity.position | position + support/presence/valid facts | use current admitted P only when valid | PASS_THROUGH |
 | orientation | pose validity.orientation | orientation + support/presence/valid facts | use current admitted Q only when valid | PASS_THROUGH |
-| linear_velocity | non-null derivative/vector | linear_velocity + facts | m/s in declared frame; no fabricated sample | PASS_THROUGH |
-| angular_velocity | non-null derivative/vector | angular_velocity + facts | rad/s; no independent IMU inference | PASS_THROUGH |
-| linear_acceleration | non-null gravity-free derivative/vector | linear_acceleration + facts | m/s², gravity removed | PASS_THROUGH |
+| linear_velocity | non-null derivative/vector + position validity | linear_velocity + facts | m/s in declared frame; no fabricated sample | PASS_THROUGH |
+| angular_velocity | non-null derivative/vector + orientation validity | angular_velocity + facts | rad/s; no independent IMU inference | PASS_THROUGH |
+| linear_acceleration | non-null gravity-free derivative/vector + position validity | linear_acceleration + facts | m/s², gravity removed | PASS_THROUGH |
 | battery_fraction | non-null fraction | battery_fraction + facts | 0..1 metadata; no pose freshness | PASS_THROUGH |
 | charging | non-null charging | charging + facts | boolean metadata including false | PASS_THROUGH |
 | raw gyro / raw accelerometer requests | no frozen token/field | no channel | no raw IMU claim | UNSUPPORTED |

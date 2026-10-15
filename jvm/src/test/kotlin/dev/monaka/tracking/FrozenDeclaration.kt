@@ -17,4 +17,3 @@ class DeclaredTrackerCapabilities(components: Collection<String>) {
 		fun orientationOnly() = DeclaredTrackerCapabilities(listOf("orientation"))
 	}
 }
-
