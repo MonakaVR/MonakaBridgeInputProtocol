@@ -1,5 +1,27 @@
 # MonakaBridge Input Protocol (MBIP)
 
+Phase 2C-P1 provides the pure native/JVM [capability normalizer](docs/capability-mapping.md)
+and its [explicit mapping table](schema/capability-mapping.json). MVIP vocabulary,
+wire validation and channel projection come from one exact source/content-pinned
+kit in `third_party/mvip`, verified by `python tools/verify_mvip.py` before native
+build. MBIP does not maintain a second capability vocabulary or codec.
+
+STRICT is the default. Legacy dynamic producers require an explicit structural
+declaration and source/tracker/session binding; no validity/presence inference.
+Normalization leaves identity, validity, age, space and mapping revisions intact.
+This value-only contract does not implement the future DLL ABI, a production
+receiver, a coordinate mapper or any Fusion/reconnect policy.
+
+Build `cpp` with CMake into `build/native` (MSVC Release), then Gradle 8.14.4
+`-p jvm build`. Run `python tools/generate_mapping.py --check`,
+`python tools/generate_core_probe.py --check`, and `python tools/test_boundary.py`.
+The boundary tests use actual MVIP C++/JVM serialization in opposite-language
+MBIP consumers, and an exact source-pinned P0 Core capability comparison block.
+The original old-Bridge sequence fails that comparison; provisioned normalization
+passes it. This is bounded contract evidence, not a production rollout/HIL claim.
+
+`PICO same-tracker IMU authenticity: NOT VERIFIED / DEFERRED`
+
 Standard input protocol for [MonakaBridge](https://github.com/MonakaVR/MonakaBridge).
 
 MBIP defines the contract used by input modules that provide tracker observations to MonakaBridge. It is intended to keep device-specific backends and MonakaBridge decoupled while giving MonakaBridge one stable input boundary.
